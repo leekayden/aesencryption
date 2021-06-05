@@ -1,0 +1,709 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>AES encryption</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+        <meta name="google-site-verification" content="fyATX7ouhGlpeQboh6ZlzRxp1v36CyIn34uN3L4hAgA" />
+        <meta name="keywords" content="AES encryption,AES encryption online,AES decyption,encryption algorithm,aes256 decryption online,java aes encryption example, php aes encryption example"/>
+        <meta name="description" content="AES encryption is a web tool to encrypt and decrypt text using AES encryption algorithm. The tool is free, without registration."/>
+        <link rel="stylesheet" href="/css/bootstrap/themes/united/bootstrap.css"/>
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap-responsive.css"/>
+        <!--link rel="stylesheet" href="https://app.divshot.com/css/divshot-util.css"/-->   
+        <link rel="stylesheet" href="/css/jquery/plugin/jquery.snippet.min.css"/>
+        <link rel="stylesheet" href="/css/main.css"/>
+        <style type="text/css">
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="#">AES encryption</a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav">
+                               
+                                <li>
+                                    <a href="#PHP-aes-encryption-example">PHP</a> 
+                                </li>
+                                <li>
+                                    <a href="#Java-aes-encryption-example">Java</a> 
+                                </li> 
+                                <li>
+                                    <a href="http://random-color.net/" title="random color" >Generate Random Color</a> 
+                                </li>
+                                <li>
+                                    <a href="http://youtubeloop.net/" title="youtube loop"  >Loop YouTube videos</a> 
+                                </li>
+                                <li>
+                                    <a href="http://current-location.com/" title="current location"  >Search on Instagram by location</a> 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="well">
+                <h1><i>AES encryption</i></h1>
+                <p>Encrypt and decrypt text with AES algorithm</p>
+                <form method="post">
+                    <textarea id="taInpText" placeholder="Plain or encrypted text here" name="inpText"
+                              rows="5" class="input-block-level">Study hard, Kayden, and you will go to a decent school and chase your dreams :)</textarea>
+                    <input autocomplete="off" placeholder="Key of the encryption" class="input-block-level input-large"
+                           type="text" name="inpKey" value="" id="inpKey">
+
+                        <select name="sleBlockSize">
+                                                        <option selected="selected" value="128">128 Bit</option>            
+                            <option  value="192">192 Bit</option>
+                            <option  value="256">256 Bit</option>
+                        </select>
+
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- aes_main_top_resp -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2573594588939938"
+                             data-ad-slot="1776518717"
+                             data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+
+                        <button type="submit" name="direction" value="Decrypt" class="btn pull-right btn-inverse btn-small">Decrypt</button>
+                        <button type="submit" name="direction" value="Encrypt"  class="btn pull-right btn-primary btn-small">Encrypt</button>
+
+                </form>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="P8LVAAKH8CDXJ">
+<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+                <form style="display: none" id="outForm" target="_blank" action="/download.php" name="out" method="post">
+                    <label>Result of encryption in base64</label>
+                    <textarea  readonly="readonly" id="taOutText"  name="mFile"
+                               rows="5" class="input-block-level">3e+o5hp9EQH3/spS0K4VDwFnZ3Y30b8YftJiEBA7tBaIIBuiPkuPmoQ77cRHxYNvgTI/j43c9zNMBTe8Bg6sMW6iVw+AjkYxF8efG80zBOk=</textarea>
+
+                    <button type="submit" name="action" value="Download" class="btn pull-right btn-primary btn-small">Download</button>
+
+                </form>
+            </div>
+
+            <div class="container">
+                <h2>
+                <a href="https://testmymicrophone.com">Online microphone test</a> /     <a href="http://downloadthumbnail.com/">Download YouTube Thumbnail</a> /     <a href="http://random-color.net/">Random Color</a> /  <a href="http://webcamtest.net/">Webcam test</a> / <a href="http://youtubeloop.net/">Loop YouTube videos</a> / <a href="http://current-location.com/">Search on Instagram by location</a> / <a href="http://base64image.org/">Convert Image to Base64 and back</a> 
+                </h2>
+                <h2 name="About-AES-encryption">
+                    <a id="About-AES-encryption">Implementation for php 7.x was added</a> 
+                </h2>
+                <p>
+                    As you see this implementation is using openssl instead of mcrypt and the result of the <i>encryption</i>/<i>decryption </i>
+                    is not compatible with each other.<br>
+                    The mcrypt function will be deprecated feature in PHP 7.1.x <br>
+                </p>  
+                <h2 name="About-AES-encryption">
+                    <a id="About-AES-encryption">What is <i>AES encryption</i>?</a> 
+                </h2>
+                <p>
+                    It is a webtool to encrypt and decrypt text using <i>AES encryption</i> algorithm.
+                    You can chose 128, 192 or 256-bit long key size for encryption and decryption.
+                    The result of the process is downloadable in a text file.
+                </p>  
+                <h2>How to use <i>AES encryption</i>?</h2>    
+                <p>    
+                    If you want to encrypt a text put it in the white textarea above, set the key of the encryption then push the <i>Encrypt</i> button.<br/>
+                    The result of the <i>encryption</i> will appear in base64 encoded to prevent character encoding problems.<br/>
+                    If you want to decrypt a text be sure it is in base64 encoded and is encrypted with <i>AES</i> algorithm!<br/> 
+                    Put the encrypted text in the white textarea, set the key and push the <i>Decrypt</i> button.
+                </p>
+
+                <h2>When is helpful to use <i>AES encryption</i>?</h2>    
+                <p>    
+                    When you want to encrypt a confidential text into a decryptable format, for example when you need to send sensitive data in e-mail.<br/>
+                    The decryption of the encrypted text it is possible only if you know the right password.
+                </p>
+
+                <h2>What is <i>AES encryption</i>?</h2>    
+                <p>   
+                    AES (acronym of Advanced Encryption Standard) is a symmetric encryption algorithm.<br/>
+                    The algorithm was developed by two Belgian cryptographer Joan Daemen and Vincent Rijmen.<br/>
+                    AES was designed to be efficient in both hardware and software, and supports a block length of 128 bits and key lengths of 128, 192, and 256 bits.
+                </p>
+                <h2>How secure is <i>AES encryption</i> algorithm?</h2>
+                <p>
+                    <i>AES encryption</i> is used by U.S. for securing sensitive but unclassified material, so we can say it is enough secure.  
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="container">
+  <h2>
+    <a id="PHP-aes-encryption-example">PHP <i>AES encryption</i> with openssl example.(versions 7.x) </a> 
+  </h2>
+        <pre class="phpCode">
+/**
+Aes encryption
+*/
+class AES {
+
+   
+
+    protected $key;
+    protected $data;
+    protected $method;
+
+    /**
+     * Available OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING
+     *
+     * @var type $options
+     */
+    protected $options = 0;
+
+    /**
+     * 
+     * @param type $data
+     * @param type $key
+     * @param type $blockSize
+     * @param type $mode
+     */
+    function __construct($data = null, $key = null, $blockSize = null, $mode = 'CBC') {
+        $this->setData($data);
+        $this->setKey($key);
+        $this->setMethode($blockSize, $mode);
+    }
+
+    /**
+     * 
+     * @param type $data
+     */
+    public function setData($data) {
+        $this->data = $data;
+    }
+
+    /**
+     * 
+     * @param type $key
+     */
+    public function setKey($key) {
+        $this->key = $key;
+    }
+
+    /**
+     * CBC 128 192 256 
+      CBC-HMAC-SHA1 128 256
+      CBC-HMAC-SHA256 128 256
+      CFB 128 192 256
+      CFB1 128 192 256
+      CFB8 128 192 256
+      CTR 128 192 256
+      ECB 128 192 256
+      OFB 128 192 256
+      XTS 128 256
+     * @param type $blockSize
+     * @param type $mode
+     */
+    public function setMethode($blockSize, $mode = 'CBC') {
+        if($blockSize==192 && in_array('', array('CBC-HMAC-SHA1','CBC-HMAC-SHA256','XTS'))){
+            $this->method=null;
+             throw new Exception('Invlid block size and mode combination!');
+        }
+        $this->method = 'AES-' . $blockSize . '-' . $mode;
+    }
+
+    /**
+     * 
+     * @return boolean
+     */
+    public function validateParams() {
+        if ($this->data != null &&
+                $this->method != null ) {
+            return true;
+        } else {
+            return FALSE;
+        }
+    }
+//it must be the same when you encrypt and decrypt
+     protected function getIV() {
+        return '1234567890123456';
+         //return mcrypt_create_iv(mcrypt_get_iv_size($this->cipher, $this->mode), MCRYPT_RAND);
+         return openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->method));
+     }
+
+    /**
+     * @return type
+     * @throws Exception
+     */
+    public function encrypt() {
+
+        if ($this->validateParams()) { 
+            return trim(openssl_encrypt($this->data, $this->method, $this->key, $this->options,$this->getIV()));
+        } else {
+            throw new Exception('Invlid params!');
+        }
+    }
+
+    /**
+     * 
+     * @return type
+     * @throws Exception
+     */
+    public function decrypt() {
+        if ($this->validateParams()) {
+           $ret=openssl_decrypt($this->data, $this->method, $this->key, $this->options,$this->getIV());
+          
+           return   trim($ret); 
+        } else {
+            throw new Exception('Invlid params!');
+        }
+    }
+
+}
+
+</pre>
+   <h2>
+    <a id="PHP-aes-encryption-example">PHP <i>AES encryption</i> with mcrypt example, for older version  5.x </a> 
+  </h2>
+    <pre class="phpCode">
+/**
+Aes encryption
+*/
+class AES {
+  
+  const M_CBC = 'cbc';
+  const M_CFB = 'cfb';
+  const M_ECB = 'ecb';
+  const M_NOFB = 'nofb';
+  const M_OFB = 'ofb';
+  const M_STREAM = 'stream';
+  
+  protected $key;
+  protected $cipher;
+  protected $data;
+  protected $mode;
+  protected $IV;
+/**
+* 
+* @param type $data
+* @param type $key
+* @param type $blockSize
+* @param type $mode
+*/
+  function __construct($data = null, $key = null, $blockSize = null, $mode = null) {
+    $this->setData($data);
+    $this->setKey($key);
+    $this->setBlockSize($blockSize);
+    $this->setMode($mode);
+    $this->setIV("");
+  }
+  
+/**
+* 
+* @param type $data
+*/
+  public function setData($data) {
+    $this->data = $data;
+  }
+  
+/**
+* 
+* @param type $key
+*/
+  public function setKey($key) {
+    $this->key = $key;
+  }
+  
+/**
+* 
+* @param type $blockSize
+*/
+  public function setBlockSize($blockSize) {
+    switch ($blockSize) {
+      case 128:
+      $this->cipher = MCRYPT_RIJNDAEL_128;
+      break;
+      
+      case 192:
+      $this->cipher = MCRYPT_RIJNDAEL_192;
+      break;
+      
+      case 256:
+      $this->cipher = MCRYPT_RIJNDAEL_256;
+      break;
+    }
+  }
+  
+/**
+* 
+* @param type $mode
+*/
+  public function setMode($mode) {
+    switch ($mode) {
+      case AES::M_CBC:
+      $this->mode = MCRYPT_MODE_CBC;
+      break;
+      case AES::M_CFB:
+      $this->mode = MCRYPT_MODE_CFB;
+      break;
+      case AES::M_ECB:
+      $this->mode = MCRYPT_MODE_ECB;
+      break;
+      case AES::M_NOFB:
+      $this->mode = MCRYPT_MODE_NOFB;
+      break;
+      case AES::M_OFB:
+      $this->mode = MCRYPT_MODE_OFB;
+      break;
+      case AES::M_STREAM:
+      $this->mode = MCRYPT_MODE_STREAM;
+      break;
+      default:
+      $this->mode = MCRYPT_MODE_ECB;
+      break;
+    }
+  }
+  
+/**
+* 
+* @return boolean
+*/
+  public function validateParams() {
+    if ($this->data != null &&
+        $this->key != null &&
+        $this->cipher != null) {
+      return true;
+    } else {
+      return FALSE;
+    }
+  }
+  
+  public function setIV($IV) {
+        $this->IV = $IV;
+    }
+
+ 
+  protected function getIV() {
+      if ($this->IV == "") {
+        $this->IV = mcrypt_create_iv(mcrypt_get_iv_size($this->cipher, $this->mode), MCRYPT_RAND);
+      }
+      return $this->IV;
+  }
+  
+/**
+* @return type
+* @throws Exception
+*/
+  public function encrypt() {
+    
+    if ($this->validateParams()) {
+      return trim(base64_encode(
+        mcrypt_encrypt(
+          $this->cipher, $this->key, $this->data, $this->mode, $this->getIV())));
+    } else {
+      throw new Exception('Invlid params!');
+    }
+  }
+
+
+/**
+* 
+* @return type
+* @throws Exception
+*/
+  public function decrypt() {
+    if ($this->validateParams()) {
+      return trim(mcrypt_decrypt(
+        $this->cipher, $this->key, base64_decode($this->data), $this->mode, $this->getIV()));
+    } else {
+      throw new Exception('Invlid params!');
+    }
+  }
+  
+}
+
+</pre>
+<h3>
+Example for using AES class
+</h3> 
+<pre class="phpCode" >
+include 'AES.php's;
+$inputText = "My text to encrypt";
+$inputKey = "My text to encrypt";
+$blockSize = 256;
+$aes = new AES($inputText, $inputKey, $blockSize);
+$enc = $aes->encrypt();
+$aes->setData($enc);
+$dec=$aes->decrypt();
+echo "After encryption: ".$enc."&lt;br/>";
+echo "After decryption: ".$dec."&lt;br/>";
+</pre>
+ <a  title="Download AES encryption example in php"  href="/aes-example/PHP-AES-example.zip"   class="btn pull-right btn-primary btn-small">Download PHP <i>AES encryption</i> example</a>
+</div>
+<div class="container">
+       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- aes_main_top_resp -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2573594588939938"
+     data-ad-slot="1776518717"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+<div class="container">
+  <h2>
+    <a id="Java-aes-encryption-example">Java <i>AES encryption</i> example</a> 
+  </h2>
+  <pre class="javaCode">
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
+
+import org.apache.commons.codec.binary.Base64;
+
+/**
+Aes encryption
+*/
+
+public class AES
+{
+
+	
+    private static SecretKeySpec secretKey ;
+    private static byte[] key ;
+    
+	private static String decryptedString;
+	private static String encryptedString;
+ 
+    
+    public static void setKey(String myKey){
+    	
+   
+    	MessageDigest sha = null;
+		try {
+			key = myKey.getBytes("UTF-8");
+			System.out.println(key.length);
+			sha = MessageDigest.getInstance("SHA-1");
+			key = sha.digest(key);
+	    	key = Arrays.copyOf(key, 16); // use only first 128 bit
+	    	System.out.println(key.length);
+	    	System.out.println(new String(key,"UTF-8"));
+		    secretKey = new SecretKeySpec(key, "AES");
+		    
+		    
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+	    	  
+	
+
+    }
+    
+    public static String getDecryptedString() {
+		return decryptedString;
+	}
+
+	public static void setDecryptedString(String decryptedString) {
+		AES.decryptedString = decryptedString;
+	}
+
+    public static String getEncryptedString() {
+		return encryptedString;
+	}
+
+	public static void setEncryptedString(String encryptedString) {
+		AES.encryptedString = encryptedString;
+	}
+
+	public static String encrypt(String strToEncrypt)
+    {
+        try
+        {
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+        
+         
+            setEncryptedString(Base64.encodeBase64String(cipher.doFinal(strToEncrypt.getBytes("UTF-8"))));
+        
+        }
+        catch (Exception e)
+        {
+           
+            System.out.println("Error while encrypting: "+e.toString());
+        }
+        return null;
+
+    }
+
+    public static String decrypt(String strToDecrypt)
+    {
+        try
+        {
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
+           
+            cipher.init(Cipher.DECRYPT_MODE, secretKey);
+            setDecryptedString(new String(cipher.doFinal(Base64.decodeBase64(strToDecrypt))));
+            
+        }
+        catch (Exception e)
+        {
+         
+            System.out.println("Error while decrypting: "+e.toString());
+
+        }
+        return null;
+    }
+
+
+    public static void main(String args[])
+    {
+ 
+                final String strToEncrypt = "My text to encrypt";
+                final String strPssword = "encryptor key";
+                AES.setKey(strPssword);
+               
+                AES.encrypt(strToEncrypt.trim());
+                
+                System.out.println("String to Encrypt: " + strToEncrypt); 
+                System.out.println("Encrypted: " + AES.getEncryptedString());
+           
+                final String strToDecrypt =  AES.getEncryptedString();
+                AES.decrypt(strToDecrypt.trim());
+               
+                System.out.println("String To Decrypt : " + strToDecrypt);
+                System.out.println("Decrypted : " + AES.getDecryptedString());
+        
+    }
+     
+}
+  </pre>
+    <a  title="Download AES encryption example in Java"  href="/aes-example/Java-AES-example.zip"   class="btn pull-right btn-primary btn-small">Download Java <i>AES encryption</i> example</a>
+</div>
+<div class="container">
+       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- aes_main_top_resp -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2573594588939938"
+     data-ad-slot="1776518717"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+        
+        <div id="myModalSurvey" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Help us!</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Please fill out our survey to help us improving aesencryption.net.</p>
+                    <p>We appreciate your feedback!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success"  id="myOk" >Click here to start it now</button>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+        <div class="floater">
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="background-color:#FFFFFF">
+                <a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
+
+                <a class="a2a_button_facebook"></a>
+
+                <a class="a2a_button_twitter"></a>
+
+                <a class="a2a_button_google_plus"></a>
+
+                <a class="a2a_button_pinterest"></a>
+
+                <a class="a2a_button_linkedin"></a>
+            </div>
+
+        </div>
+         <div id="footer">
+      <div class="container">
+        <p class="">If you have any question or suggestion send an e-mail to <a href="mailto:dev@aesencryption.net" >dev@aesencryption.net</a></p>
+      </div>
+    </div>    </body>
+
+
+    <script src="/js/jquery.min.js"></script>
+      <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.snippet.min.js"></script>
+    <script src="/js/jquery.floatingFixed.js"></script>
+     <script type="text/javascript" src="/js/smart-modal.js"></script>    
+    <script type="text/javascript" src="/js/survey-adapter.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45217011-2', 'aesencryption.net');
+        ga('send', 'pageview');
+
+    </script>
+
+    <!-- AddToAny BEGIN -->
+    <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "Online AES encryption and decryption tool - 128, 192, 256";
+        a2a_config.linkurl = "http://aesencryption.net";
+    </script> 
+    <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+    <!-- AddToAny END -->
+    
+     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+                window.cookieconsent_options = {"message": "We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners.", "dismiss": "Got it!", "learnMore": "More info", "link": null, "theme": "dark-bottom"};
+    </script>
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+    2021-05-06
+    <!-- End Cookie Consent plugin -->
